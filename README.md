@@ -39,7 +39,7 @@ La documentación se encuentra organizada en informes técnicos independientes, 
 |---|---|---|
 | Instalación del sistema operativo y SSH | Instalación de Linux y configuración del acceso remoto seguro | [Ver informe](TP1_OS_SSH/OS_SSH.md) |
 | Servidor gráfico Xorg | Instalación de Xorg y configuración de X11 Forwarding mediante SSH | [Ver informe](Xorg_X11_Forwarding/Xorg_X11_Forwarding.md) |
-| Servidor DHCP | Configuración del servidor DHCP y diseño de la red LAN | [Ver informe](Servicio_DHCP/) |
+| Servidor DHCP | Configuración del servidor DHCP y diseño de la red LAN | [Ver informe](Servicio_DHCP/Servicio_DHCP.md) |
 
 ## Arquitectura de red
 
