@@ -123,7 +123,7 @@ El servidor debe tener una IP **estática** (fija) porque los clientes necesitan
 
 Este diseño se representó en un diagrama de **Packet Tracer**, que permite visualizar claramente cómo se conectan los dispositivos:
 
-![Diagrama de la red en Packet Tracer](imagenes/dhcp_diagrama.jpeg)
+![Diagrama de la red en Packet Tracer](imagenes/dhcp_diagrama.png)
 
 > **Figura 1:** Diagrama de la red LAN del grupo realizado en Packet Tracer, con la Raspberry Pi (servidor DHCP) y las notebooks conectadas a un mismo switch.
 
