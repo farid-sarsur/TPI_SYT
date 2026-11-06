@@ -206,7 +206,7 @@ sudo apt install vsftpd -y
 
 La instalación incorpora los archivos del programa, su configuración y la unidad del servicio que puede ser controlada por `systemctl`.
 
-![Actualización de paquetes e instalación de vsftpd](imagenes/ftp_1.jpeg)
+![Actualización de paquetes e instalación de vsftpd](ftp_1.jpeg)
 
 > **Figura 1:** Ejecución de `sudo apt update` y `sudo apt install vsftpd -y` en la terminal de la Raspberry.
 
@@ -281,7 +281,7 @@ sudo systemctl status vsftpd
 - `status`: muestra si el servicio está cargado y en ejecución, junto con mensajes recientes.
 - `vsftpd`: servicio sobre el que se actúa.
 
-![Archivo de configuración editado y reinicio del servicio](imagenes/ftp_2.jpeg)
+![Archivo de configuración editado y reinicio del servicio](ftp_2.jpeg)
 
 > **Figura 2:** En la parte superior se observa el editor `nano` con el archivo `/etc/vsftpd.conf` ya modificado con las directivas descriptas (el contenido no se aprecia en la captura). Debajo aparecen los comandos `sudo systemctl restart vsftpd` y `sudo systemctl status vsftpd`.
 
@@ -309,7 +309,7 @@ sudo ss -lntp | grep ':21'
 
 La salida mostró una línea con estado **`LISTEN`** para el puerto 21, lo que confirmó que `vsftpd` estaba escuchando solicitudes de conexión FTP.
 
-![Estado del servicio y puerto 21 en escucha](imagenes/ftp_3.jpeg)
+![Estado del servicio y puerto 21 en escucha](ftp_3.jpeg)
 
 > **Figura 3:** Resultado de `sudo systemctl status vsftpd` y de `sudo ss -lntp | grep ':21'`.
 
@@ -347,7 +347,7 @@ Prueba del servidor FTP - Grupo 3
 
 Este archivo sirvió para verificar posteriormente que el cliente podía visualizar y descargar contenido del servidor.
 
-![Creación de la carpeta de prueba y diagnóstico de red](imagenes/ftp_4.jpeg)
+![Creación de la carpeta de prueba y diagnóstico de red](ftp_4.jpeg)
 
 > **Figura 4:** Continuación de la captura de la Figura 2. En la parte inicial se observan los comandos de esta sección (`mkdir -p ~/ftp`, `mkdir -p ~/home/grupo3/ftp`, `ls -ld ~/ftp`, `echo ... > ~/ftp/prueba.txt` y `cat ~/ftp/prueba.txt`). A continuación aparecen los comandos de diagnóstico de red que se explican en la sección siguiente.
 
@@ -375,7 +375,7 @@ ip link show eth0
 
 La ausencia de enlace físico o de dirección IP es distinta de un error de configuración de FTP: antes de intercambiar paquetes IP, el cable, el puerto del switch y la dirección de la interfaz deben estar en orden.
 
-![Creación de la carpeta de prueba y diagnóstico de red](imagenes/ftp_4.jpeg)
+![Creación de la carpeta de prueba y diagnóstico de red](ftp_4.jpeg)
 
 > **Figura 4 (repetida):** Misma captura de la sección anterior. En esta parte interesan los comandos de diagnóstico de red: `hostname -I`, `ip -4 addr show eth0`, `nmcli device status` e `ip link show eth0`.
 
@@ -410,7 +410,7 @@ Con esto se confirmó que, con la IP asignada, `vsftpd` seguía activo, el puert
 
 > **Nota:** `ip addr add` configura una dirección **temporal**, no persistente. Puede desaparecer al reiniciar o al cambiar el estado o perfil de la conexión, lo cual explica lo ocurrido durante la práctica. Para hacerla permanente se necesita un paso adicional en el administrador de red que no se realizó en esta entrega.
 
-![Asignación repetida de la IP y comprobaciones finales](imagenes/ftp_5.jpeg)
+![Asignación repetida de la IP y comprobaciones finales](ftp_5.jpeg)
 
 > **Figura 5:** Se repite varias veces `sudo ip addr add 192.168.3.1/24 dev eth0` seguido de `ip -4 addr show eth0`, hasta ejecutar `sudo systemctl status vsftpd`, luego `sudo ss -lntp | grep ':21'` y, por último, `ip -4 addr show eth0`.
 
@@ -480,13 +480,13 @@ Para transferir un archivo se puede arrastrar desde uno de los paneles hacia el 
 
 Con FileZilla conectado, en el **sitio remoto** se ingresó a la carpeta `grupo3` y dentro de ella a la carpeta `ftp`, donde se encontró el archivo `prueba.txt` creado previamente desde la terminal de la Raspberry.
 
-![FileZilla conectado: carpeta ftp con prueba.txt](imagenes/ftp_6.jpeg)
+![FileZilla conectado: carpeta ftp con prueba.txt](ftp_6.jpeg)
 
 > **Figura 6:** Captura tomada en la notebook. FileZilla muestra las dos interfaces: el **sitio local** y el **sitio remoto**. En este último se navegó hasta `grupo3/ftp`, donde aparece el archivo `prueba.txt`.
 
 Luego se abrió el archivo en la notebook para comprobar que su contenido podía leerse correctamente. Al ser un archivo de formato `.txt`, se muestra únicamente texto, y contiene la frase escrita desde la Raspberry:
 
-![Contenido de prueba.txt abierto en la notebook](imagenes/ftp_7.jpeg)
+![Contenido de prueba.txt abierto en la notebook](ftp_7.jpeg)
 
 > **Figura 7:** Contenido de `prueba.txt` visto desde la notebook: `Prueba del servidor FTP - Grupo 3`.
 
@@ -498,7 +498,7 @@ Esta prueba fue **exitosa**: el archivo alojado en el servidor pudo visualizarse
 
 Para comprobar la operación inversa, se trabajó en el **sitio local** ubicado en `C:\Users\Usuario\Downloads\`, donde se encontraba un archivo llamado `holarasp.txt`. Este archivo se transfirió hacia la carpeta `ftp` del sitio remoto.
 
-![holarasp.txt en el sitio local y en el sitio remoto](imagenes/ftp_8.jpeg)
+![holarasp.txt en el sitio local y en el sitio remoto](ftp_8.jpeg)
 
 > **Figura 8:** Nuevamente en FileZilla. En el sitio local (`C:\Users\Usuario\Downloads\`) aparece `holarasp.txt`, y en el sitio remoto, dentro de la carpeta `ftp`, el archivo también aparece, lo que demuestra que la subida se realizó.
 
@@ -514,7 +514,7 @@ ls -l ~/ftp
 - `-l`: muestra detalles de cada archivo, incluidos tamaño, permisos, propietario y fecha de modificación.
 - `~/ftp`: directorio utilizado para las transferencias.
 
-![Contenido de la carpeta ftp desde la terminal de la Raspberry](imagenes/ftp_9.jpeg)
+![Contenido de la carpeta ftp desde la terminal de la Raspberry](ftp_9.jpeg)
 
 > **Figura 9:** Ejecución de `ls -l ~/ftp` en el monitor de la Raspberry, donde se ven los dos archivos presentes en el servidor: `prueba.txt` y `holarasp.txt`.
 
