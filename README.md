@@ -41,6 +41,7 @@ La documentación se encuentra organizada en informes técnicos independientes, 
 | Servidor gráfico Xorg | Instalación de Xorg y configuración de X11 Forwarding mediante SSH | [Ver informe](Xorg_X11_Forwarding/Xorg_X11_Forwarding.md) |
 | Servidor DHCP | Configuración del servidor DHCP y diseño de la red LAN | [Ver informe](Servicio_DHCP/Servicio_DHCP.md) |
 | Servidor FTP | Instalación y configuración de un servidor FTP basico | [Ver informe](Servicio_FTP/Servicio_FTP.md) |
+| Internet - DNS | Configurar acceso a internet por bluetooth | [Ver informe](Internet-DNS/Acceso_Internet_Bluetooth(1).mdd) |
 
 ## Arquitectura de red
 
